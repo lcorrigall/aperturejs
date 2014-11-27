@@ -578,7 +578,8 @@ function(namespace) {
                     var stroke = radialData[iSeries].stroke,
                         strokeWidth = radialData[iSeries]['stroke-width'],
                         fill   = radialData[iSeries].fill,
-                        outlineSeries = outline && iSeries == numSeries-1;
+                        outlineSeries = outline && iSeries == numSeries- 1,
+                        radius = radialData[iSeries].radius;
 
 
                     if(segmented) {
@@ -590,7 +591,6 @@ function(namespace) {
                             radialData = segmentRadialData[iSegment];
 
                             var  spread = this.valueFor( 'sector-angle', data, defSpread, iSegment ),
-                                radius = radialData[iSeries].radius,
                                 rotation1 = rotation( rotation0.angle + spread );
 
                             if(rotations.length != numSegments) {
